@@ -1,0 +1,38 @@
+app-id: com.naomorii.SAOHud
+runtime: org.freedesktop.Platform
+runtime-version: '23.08'
+sdk: org.freedesktop.Sdk
+command: sao-hud.py
+finish-args:
+  - --share=network
+  - --filesystem=home
+  - --device=dri
+  - --socket=x11
+  - --socket=wayland
+  - --talk-name=org.freedesktop.Flatpak
+  - --talk-name=org.freedesktop.portal.Desktop
+  - --own-name=org.naomorii.SAOHud
+  - --env=GDK_BACKEND=x11
+
+modules:
+  - name: sao-hud
+    buildsystem: simple
+    build-commands:
+      - install -D files/sao-hud.py /app/bin/sao-hud.py
+      - cp -r files/lifebars /app/bin/lifebars
+      - install -D files/com.naomorii.SAOHud.desktop /app/share/applications/com.naomorii.SAOHud.desktop
+      - install -D files/lifebars/sao-hud.png /app/share/sao-hud/lifebars/sao-hud.png
+    sources:
+      - type: file
+        path: files/sao-hud.py
+      - type: dir
+        path: files/lifebars
+      - type: file
+        path: files/com.naomorii.SAOHud.desktop
+
+  - name: python-deps
+    buildsystem: simple
+    build-commands:
+      - python3 -m pip install --prefix=/app psutil
+    sources: []
+
