@@ -21,11 +21,9 @@ modules:
   - name: sao-hud
     buildsystem: simple
     build-commands:
-      # Installer le script Python
       - install -D sao-hud.py /app/bin/sao-hud.py
-      # Installer les images lifebars et boutons
-      - cp -r lifebars /app/bin/lifebars
-      # Installer le .desktop
+      - install -d /app/bin/lifebars
+      - install -m 644 *.png /app/bin/lifebars/
       - install -D com.naomorii.SAOHud.desktop /app/share/applications/com.naomorii.SAOHud.desktop
       # Installer l’icône SAO HUD
       - install -D lifebars/sao-hud.png /app/share/sao-hud/lifebars/sao-hud.png
