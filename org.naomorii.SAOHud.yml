@@ -26,7 +26,7 @@ modules:
       - install -m 644 *.png /app/bin/lifebars/
       - install -D com.naomorii.SAOHud.desktop /app/share/applications/com.naomorii.SAOHud.desktop
       # Installer l’icône SAO HUD
-      - install -D lifebars/sao-hud.png /app/share/sao-hud/lifebars/sao-hud.png
+      - install -D sao-hud.png /app/share/sao-hud/lifebars/sao-hud.png
     sources:
       - type: file
         path: files/sao-hud.py
