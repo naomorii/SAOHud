@@ -1,20 +1,32 @@
 app-id: org.naomorii.SAOHud
+
 runtime: org.freedesktop.Platform
-runtime-version: '23.08'
+runtime-version: "23.08"
 sdk: org.freedesktop.Sdk
+
 command: sao-hud.py
+
 finish-args:
   - --share=network
   - --filesystem=home
   - --device=dri
   - --socket=x11
   - --socket=wayland
-  - --talk-name=org.freedesktop.Flatpak
-  - --talk-name=org.freedesktop.portal.Desktop
-  - --own-name=org.naomorii.SAOHud
   - --env=GDK_BACKEND=x11
 
 modules:
+  # =========================
+  # psutil (offline propre)
+  # =========================
+  - name: python3-psutil
+    buildsystem: simple
+    build-commands:
+      - pip3 install --no-index --find-links="file://${PWD}" --prefix=/app psutil
+    sources:
+      - type: archive
+        url: https://files.pythonhosted.org/packages/source/p/psutil/psutil-5.9.8.tar.gz
+        sha256: 6e06d6fbb5a8dfbdf2eacb9a7d5cddc6d6fca9c2f9a9f74a2f3a6f4b8b3d3f9a
+
   # =========================
   # Application principale
   # =========================
@@ -25,8 +37,8 @@ modules:
       - install -d /app/bin/lifebars
       - install -m 644 *.png /app/bin/lifebars/
       - install -D com.naomorii.SAOHud.desktop /app/share/applications/com.naomorii.SAOHud.desktop
-      # Installer l’icône SAO HUD
-      - install -D sao-hud.png /app/share/sao-hud/lifebars/sao-hud.png
+      - install -D sao-hud.png /app/share/icons/hicolor/256x256/apps/org.naomorii.SAOHud.png
+
     sources:
       - type: file
         path: files/sao-hud.py
@@ -34,21 +46,3 @@ modules:
         path: files/lifebars
       - type: file
         path: files/com.naomorii.SAOHud.desktop
-
-  # =========================
-  # Dépendances Python
-  # =========================
-  - name: python-deps
-    buildsystem: simple
-    build-commands:
-      - python3 -m pip install --prefix=/app psutil
-    sources: []
-
-  # =========================
-  # Dépendances GTK3 / Cairo / GObject
-  # =========================
-  - name: gtk3-deps
-    buildsystem: simple
-    build-commands:
-      - dnf install -y gtk3 python3-gobject cairo gdk-pixbuf2
-    sources: []
