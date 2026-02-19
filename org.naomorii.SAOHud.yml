@@ -1,4 +1,4 @@
-app-id: com.naomorii.SAOHud
+app-id: org.naomorii.SAOHud
 runtime: org.freedesktop.Platform
 runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
@@ -6,15 +6,18 @@ command: sao-hud.py
 finish-args:
   - --share=network
   - --filesystem=home
-  - --device=dri
+  - --device=dri           # accès GPU
   - --socket=x11
   - --socket=wayland
   - --talk-name=org.freedesktop.Flatpak
   - --talk-name=org.freedesktop.portal.Desktop
   - --own-name=org.naomorii.SAOHud
-  - --env=GDK_BACKEND=x11
+  - --env=GDK_BACKEND=x11  # forcé pour XWayland si nécessaire
 
 modules:
+  # =========================
+  # Application principale
+  # =========================
   - name: sao-hud
     buildsystem: simple
     build-commands:
@@ -30,9 +33,22 @@ modules:
       - type: file
         path: files/com.naomorii.SAOHud.desktop
 
+  # =========================
+  # Dépendances Python
+  # =========================
   - name: python-deps
     buildsystem: simple
     build-commands:
       - python3 -m pip install --prefix=/app psutil
     sources: []
+
+  # =========================
+  # Dépendances Gtk / Cairo / GObject
+  # =========================
+  - name: gtk3-deps
+    buildsystem: simple
+    build-commands:
+      - dnf install -y gtk3 python3-gobject cairo gdk-pixbuf2
+    sources: []
+
 
