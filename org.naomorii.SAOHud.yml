@@ -18,11 +18,12 @@ modules:
   - name: sao-hud
     buildsystem: simple
     build-commands:
-      - install -D sao-hud.py /app/bin/sao-hud.py
+      - install -Dm755 sao-hud.py /app/bin/sao-hud.py
       - install -d /app/bin/lifebars
       - install -m 644 *.png /app/bin/lifebars/
       - install -D com.naomorii.SAOHud.desktop /app/share/applications/org.naomorii.SAOHud.desktop
       - install -D sao-hud.png /app/share/icons/hicolor/256x256/apps/org.naomorii.SAOHud.png
+
 
     sources:
       - type: file
