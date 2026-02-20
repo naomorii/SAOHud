@@ -25,7 +25,7 @@ modules:
     sources:
       - type: archive
         url: https://files.pythonhosted.org/packages/source/p/psutil/psutil-5.9.8.tar.gz
-        sha256: 6e06d6fbb5a8dfbdf2eacb9a7d5cddc6d6fca9c2f9a9f74a2f3a6f4b8b3d3f9a
+        sha256: 6be126e3225486dff286a8fb9a06246a5253f4c7c53b475ea5f5ac934e64194c
 
   # =========================
   # Application principale
