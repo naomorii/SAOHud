@@ -4,7 +4,14 @@ runtime: org.freedesktop.Platform
 runtime-version: "23.08"
 sdk: org.freedesktop.Sdk
 
-command: sao-hud.py
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.python3
+
+build-options:
+  append-path: /usr/lib/sdk/python3/bin
+  append-ld-library-path: /usr/lib/sdk/python3/lib
+
+command: python3 sao-hud.py
 
 finish-args:
   - --share=network
@@ -15,21 +22,6 @@ finish-args:
   - --env=GDK_BACKEND=x11
 
 modules:
-  # =========================
-  # psutil (offline propre)
-  # =========================
-  - name: python3-psutil
-    buildsystem: simple
-    build-commands:
-      - pip3 install --no-index --find-links="file://${PWD}" --prefix=/app psutil
-    sources:
-      - type: archive
-        url: https://files.pythonhosted.org/packages/source/p/psutil/psutil-5.9.8.tar.gz
-        sha256: 6be126e3225486dff286a8fb9a06246a5253f4c7c53b475ea5f5ac934e64194c
-
-  # =========================
-  # Application principale
-  # =========================
   - name: sao-hud
     buildsystem: simple
     build-commands:
