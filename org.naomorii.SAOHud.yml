@@ -1,30 +1,31 @@
 app-id: org.naomorii.SAOHud
-
-runtime: org.gnome.Platform
-runtime-version: "45"
-sdk: org.gnome.Sdk
-
+runtime: org.freedesktop.Platform
+runtime-version: '23.08'
+sdk: org.freedesktop.Sdk
 command: sao-hud.py
-
 finish-args:
   - --share=network
   - --filesystem=home
   - --device=dri
   - --socket=x11
   - --socket=wayland
+  - --talk-name=org.freedesktop.Flatpak
+  - --talk-name=org.freedesktop.portal.Desktop
+  - --own-name=org.naomorii.SAOHud
   - --env=GDK_BACKEND=x11
 
 modules:
+  # =========================
+  # Application principale
+  # =========================
   - name: sao-hud
     buildsystem: simple
     build-commands:
-      - install -Dm755 sao-hud.py /app/bin/sao-hud.py
+      - install -D sao-hud.py /app/bin/sao-hud.py
       - install -d /app/bin/lifebars
       - install -m 644 *.png /app/bin/lifebars/
       - install -D com.naomorii.SAOHud.desktop /app/share/applications/org.naomorii.SAOHud.desktop
       - install -D sao-hud.png /app/share/icons/hicolor/256x256/apps/org.naomorii.SAOHud.png
-
-
     sources:
       - type: file
         path: files/sao-hud.py
@@ -32,3 +33,25 @@ modules:
         path: files/lifebars
       - type: file
         path: files/com.naomorii.SAOHud.desktop
+      - type: file
+        path: files/sao-hud.png
+
+  # =========================
+  # Dépendances Python (psutil)
+  # =========================
+  - name: python-deps
+    buildsystem: simple
+    build-commands:
+      - python3 -m pip install --no-index --find-links=files/deps --prefix=/app psutil
+    sources:
+      - type: file
+        path: files/deps/psutil-5.9.8.tar.gz
+
+  # =========================
+  # Dépendances GTK3 / Cairo / GObject
+  # =========================
+  - name: gtk3-deps
+    buildsystem: simple
+    build-commands:
+      - dnf install -y gtk3 python3-gobject cairo gdk-pixbuf2
+    sources: []
