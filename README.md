@@ -1,15 +1,11 @@
-git clone https://github.com/naomorii/SAOHud.git
+====================
+Installation
+====================
 
-cd SAOHud
+1 - Download the files.
 
-# Installe les SDK / runtime si nécessaire
-flatpak install flathub org.gnome.Platform//45
-
-flatpak install flathub org.gnome.Sdk//45
+2 - Place the sao-hud folder where you want the main files to be stored.
 
 
-# Build et installe localement
-flatpak-builder --user --install --force-clean build-dir org.naomorii.SAOHud.yml
 
-# Lance l’application
-flatpak run com.naomorii.SAOHud
+To let the app launch at startup, copy sao-hud.desktop (from the "Utils" folder) to ~/.config/autostart/
