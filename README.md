@@ -34,5 +34,5 @@ How does it work ?
 
 1 - To start the app manually, use the following command in the terminal :
     GDK_BACKEND=x11 python3 main.py
-    If it already launches at startup, you can skip this step
+    If it already launches at startup, you can skip this step.
 
