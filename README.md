@@ -8,4 +8,4 @@
 
 
 
-To let the app launch at startup, copy sao-hud.desktop (from the "Utils" folder) to ~/.config/autostart/
+To let the app launch at startup, copy sao-hud.desktop (from the "utils" folder) to ~/.config/autostart/
