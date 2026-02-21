@@ -21,4 +21,7 @@ Launch at startup
 
 2 - Edit the path to the app directory to make it readable for your system.
 
-3 - Reconnect your user session to see the app launch at startup
+3 - Use the following command in the terminal to make it executable :
+    chmod +x ~/.config/autostart/sao-hud.desktop
+
+4 - Reconnect your user session to see the app launch at startup
