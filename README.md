@@ -60,7 +60,7 @@ Launch at startup
 Manual launch
 -----
 
-1 - Use the following commands in the terminal :
+Use the following commands in the terminal :
 
     cd /opt/sao-hud/
 
