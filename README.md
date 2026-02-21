@@ -49,5 +49,7 @@ How does it work ?
 
 1 - To start the app manually, use the following command in the terminal :
 
+    cd /opt/sao-hud/
+
     GDK_BACKEND=x11 python3 main.py
 
