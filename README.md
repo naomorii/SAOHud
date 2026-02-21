@@ -15,9 +15,6 @@ Installation
 
 3 - Move the sao-hud folder to /home/YOUR_USERNAME/
 
-To start the app manually, use the following command in the terminal :
-GDK_BACKEND=x11 python3 main.py
-
 
 Launch at startup
 -----
@@ -30,3 +27,12 @@ Launch at startup
     chmod +x ~/.config/autostart/sao-hud.desktop
 
 4 - Reconnect your user session to see the app launch at startup
+
+
+How does it work ?
+-----
+
+1 - To start the app manually, use the following command in the terminal :
+    GDK_BACKEND=x11 python3 main.py
+    If it already launches at startup, you can skip this step
+
