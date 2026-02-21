@@ -19,6 +19,7 @@ Installation
     sudo dnf install -y xorg-x11-server-Xwayland
 
 5 - Install all the dependencies with this command in the terminal :
+
     sudo dnf install -y python3-gobject python3-cairo gtk3 gtk3-devel \
     cairo-devel gobject-introspection-devel python3-pip lm_sensors
 
