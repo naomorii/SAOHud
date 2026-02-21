@@ -13,7 +13,7 @@ Installation
 
 2 - Extract the files from the archive
 
-3 - Move the sao-hud folder to /home/YOUR_USERNAME/
+3 - Move the sao-hud folder to /opt/
 
 4 - If you are on a Wayland system, you will need to run this command in the terminal to install XWayland :
 
@@ -34,13 +34,11 @@ Launch at startup
 
 1 - Copy sao-hud.desktop (from the "utils" folder) to /home/YOUR_USERNAME/.config/autostart/
 
-2 - Edit the path to the app directory to make it readable for your system.
-
-3 - Use the following command in the terminal to make it executable :
+2 - Use the following command in the terminal to make it executable :
 
     chmod +x ~/.config/autostart/sao-hud.desktop
 
-4 - Reconnect your user session to see the app launch at startup
+3 - Reconnect your user session to see the app launch at startup
 
 
 How does it work ?
