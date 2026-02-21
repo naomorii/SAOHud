@@ -1,9 +1,10 @@
-====================
-Installation====================
+==================== Installation ====================
 
 1 - Download the files.
 
-2 - Place the sao-hud folder where you want the main files to be stored.
+2 - Extract the files from the archive
+
+3 - Place the sao-hud folder where you want the main files to be stored.
 
 
 
