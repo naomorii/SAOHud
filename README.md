@@ -1,3 +1,14 @@
+SAO HUD
+=====
+
+This app is a fan-based desktop HUD system monitor overlay for Linux, based on Sword Art Online.
+
+It shows animated “SAO-style life bars” on your screen for RAM, GPU, CPU, and SSD usage.
+
+When launched, it sits on the background of your display.
+If toggled with the "+" button, it can float over your windows.
+
+When the HUD is on top of the display, it is click-through and you can still use the other apps behind it.
 
 Compatibility
 -----
@@ -52,4 +63,7 @@ How does it work ?
     cd /opt/sao-hud/
 
     GDK_BACKEND=x11 python3 main.py
+
+Credits
+-----
 
