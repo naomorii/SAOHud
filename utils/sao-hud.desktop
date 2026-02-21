@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=SAO HUD
-Exec=env GDK_BACKEND=x11 /home/YOUR_USERNAME/sao-hud/main.py
+Exec=env GDK_BACKEND=x11 /opt/sao-hud/main.py
 StartupNotify=false
 Terminal=false
 X-GNOME-Autostart-enabled=true
