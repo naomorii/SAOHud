@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=SAO HUD
+Exec=env GDK_BACKEND=x11 /home/naomorii/sao-hud/main.py
+Icon=/home/naomorii/sao-hud/lifebars/sao-hud.png
+StartupNotify=false
+Terminal=false
+X-GNOME-Autostart-enabled=true
+StartupWMClass=sao-hud
