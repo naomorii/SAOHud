@@ -1,6 +1,8 @@
 SAO HUD
 =====
 
+![screenshot](screenshot.png)
+
 This app is a fan-based desktop HUD system monitor overlay for Linux, based on Sword Art Online.
 
 It shows animated “SAO-style life bars” on your screen for RAM, GPU, CPU, and SSD usage.
@@ -55,10 +57,10 @@ Launch at startup
 3 - Reconnect your user session to see the app launch at startup
 
 
-How does it work ?
+Manual launch
 -----
 
-1 - To start the app manually, use the following commands in the terminal :
+1 - Use the following commands in the terminal :
 
     cd /opt/sao-hud/
 
@@ -67,3 +69,4 @@ How does it work ?
 Credits
 -----
 
+All credit goes to the original author of Sword Art Online : Reki Kawahara.
