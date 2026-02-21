@@ -47,7 +47,7 @@ Launch at startup
 How does it work ?
 -----
 
-1 - To start the app manually, use the following command in the terminal :
+1 - To start the app manually, use the following commands in the terminal :
 
     cd /opt/sao-hud/
 
