@@ -1,7 +1,9 @@
+
 ==================== Compatibility ====================
 
 This app has been written to work on Nobara (Fedora 42) distribution.
 It is made for Gnome (49) Wayland (using XWayland), but could be used by any system that has compatibility with X11 commands.
+
 
 ==================== Installation ====================
 
@@ -10,6 +12,7 @@ It is made for Gnome (49) Wayland (using XWayland), but could be used by any sys
 2 - Extract the files from the archive
 
 3 - Move the sao-hud folder to /home/YOUR_USERNAME/
+
 
 ==================== Launch at startup ====================
 
