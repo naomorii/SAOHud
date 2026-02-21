@@ -15,6 +15,16 @@ Installation
 
 3 - Move the sao-hud folder to /home/YOUR_USERNAME/
 
+4 - If you are on a Wayland system, you will need to run this command in the terminal to install XWayland :
+    sudo dnf install -y xorg-x11-server-Xwayland
+
+5 - Install all the dependencies with this command in the terminal :
+    sudo dnf install -y python3-gobject python3-cairo gtk3 gtk3-devel \
+    cairo-devel gobject-introspection-devel python3-pip lm_sensors
+
+6 - Install the Python library with this command in the terminal :
+    python3 -m pip install --user psutil
+
 
 Launch at startup
 -----
