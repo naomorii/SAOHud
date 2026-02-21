@@ -5,6 +5,7 @@ Compatibility
 This app has been written to work on Nobara (Fedora 42) distribution.
 It is made for Gnome (49) Wayland (using XWayland), but could be used by any system that has compatibility with X11 commands.
 
+
 Installation
 -----
 
@@ -13,6 +14,10 @@ Installation
 2 - Extract the files from the archive
 
 3 - Move the sao-hud folder to /home/YOUR_USERNAME/
+
+To start the app manually, use the following command in the terminal :
+GDK_BACKEND=x11 python3 main.py
+
 
 Launch at startup
 -----
