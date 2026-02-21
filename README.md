@@ -1,6 +1,5 @@
 ====================
-Installation
-====================
+Installation====================
 
 1 - Download the files.
 
