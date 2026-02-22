@@ -16,8 +16,12 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def get_amd_gpu_percent():
     try:
-        with open("/sys/class/drm/card0/device/gpu_busy_percent", "r") as f:
-            return int(f.read().strip()) / 100.0
+        for card in os.listdir("/sys/class/drm/"):
+            if card.startswith("card") and "-" not in card:
+                path = f"/sys/class/drm/{card}/device/gpu_busy_percent"
+                if os.path.exists(path):
+                    with open(path, "r") as f:
+                        return int(f.read().strip()) / 100.0
     except Exception:
         return None
 
