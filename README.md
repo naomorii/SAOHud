@@ -27,44 +27,16 @@ Installation
 
 2 - Extract the files from the archive
 
-3 - Move the sao-hud folder to /opt/
+3 - Run the following commands in the terminal :
 
-You may need to open the folder as admin.
+    sudo chmod +x ~/Downloads/SAOHud-main/SAOHUDInstaller.run
 
-4 - If you are on a Wayland system, you will need to run this command in the terminal to install XWayland :
+Run the file named "SAOHUDInstaller.run" with a double click or right click it, then click "Run as executable".
 
-    sudo dnf install -y xorg-x11-server-Xwayland
+4 - Let the installer start. Enter your admin password when asked and everything is installed.
 
-5 - Install all the dependencies with this command in the terminal :
+5 - Reconnect your user session to see the app launch at startup
 
-    sudo dnf install -y python3-gobject python3-cairo gtk3 gtk3-devel \
-    cairo-devel gobject-introspection-devel python3-pip lm_sensors
-
-6 - Install the Python library with this command in the terminal :
-
-    python3 -m pip install --user psutil
-
-
-Launch at startup
------
-
-1 - Copy sao-hud.desktop (from the "utils" folder) to /home/YOUR_USERNAME/.config/autostart/
-
-2 - Use the following command in the terminal to make it executable :
-
-    chmod +x ~/.config/autostart/sao-hud.desktop
-
-3 - Reconnect your user session to see the app launch at startup
-
-
-Manual launch
------
-
-Use the following commands in the terminal :
-
-    cd /opt/sao-hud/
-
-    GDK_BACKEND=x11 python3 main.py
 
 Credits
 -----
