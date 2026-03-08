@@ -29,7 +29,7 @@ Installation
 
 3 - Run the following commands in the terminal :
 
-    chmod +x ~/Downloads/SAOHud-2.0/SAOHUDInstaller.run
+    chmod +x ~/Downloads/SAOHud-main/SAOHUDInstaller.run
 
 Run the file named "SAOHUDInstaller.run" with a double click or right click it, then click "Run as executable".
 
